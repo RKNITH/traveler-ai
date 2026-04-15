@@ -151,7 +151,7 @@ export default function Home() {
                   onChange={e => setTravelers(e.target.value)}
                   className="bg-transparent outline-none text-gray-800 dark:text-white text-sm"
                 >
-                  {[1,2,3,4,5,6,7,8,9,10].map(n => (
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
                     <option key={n} value={n}>{n} Traveler{n > 1 ? 's' : ''}</option>
                   ))}
                 </select>
@@ -219,8 +219,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredDest.length > 0
               ? featuredDest.slice(0, 6).map((dest, i) => (
-                  <DestinationCard key={dest._id} destination={dest} delay={i * 0.1} variant="featured" />
-                ))
+                <DestinationCard key={dest._id} destination={dest} delay={i * 0.1} variant="featured" />
+              ))
               : Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
             }
           </div>
@@ -275,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* FEATURED PACKAGES */}
-      <section className="section-padding">
+      <section className="section-padding bg-white dark:bg-gray-950">
         <div className="page-container">
           <div className="flex items-end justify-between mb-10">
             <div>
@@ -287,8 +287,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredPkg.length > 0
               ? featuredPkg.slice(0, 8).map((pkg, i) => (
-                  <PackageCard key={pkg._id} pkg={pkg} delay={i * 0.05} />
-                ))
+                <PackageCard key={pkg._id} pkg={pkg} delay={i * 0.05} />
+              ))
               : Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
             }
           </div>
@@ -325,7 +325,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="section-padding">
+      <section className="section-padding bg-white dark:bg-gray-950">
         <div className="page-container">
           <div className="text-center mb-12">
             <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-2">Traveler Stories</p>

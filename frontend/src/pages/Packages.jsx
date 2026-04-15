@@ -48,7 +48,7 @@ export default function Packages() {
 
   return (
     <PageWrapper>
-      <div className="pt-16 md:pt-20">
+      <div className="pt-16 md:pt-20 min-h-screen bg-white dark:bg-gray-950">
         {/* Header */}
         <div className="bg-gradient-to-br from-primary-900 to-primary py-16 px-4">
           <div className="page-container text-center">

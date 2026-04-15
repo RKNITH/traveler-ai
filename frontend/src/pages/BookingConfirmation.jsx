@@ -29,29 +29,28 @@ export default function BookingConfirmation() {
             </motion.div>
           </div>
           <h1 className="font-heading text-3xl font-bold text-gray-900 dark:text-white mb-2">Booking Confirmed! 🎉</h1>
-          <p className="text-gray-500 mb-6">Your adventure is booked. Get ready for an amazing experience!</p>
-
+          <p className="text-gray-500 dark:text-gray-400 mb-6">Your adventure is booked. Get ready for an amazing experience!</p>
           {booking && (
             <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-5 mb-6 text-left space-y-3">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Booking ID</span>
+                <span className="text-gray-500 dark:text-gray-400">Booking ID</span>
                 <span className="font-bold text-primary">{booking.bookingId}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Package</span>
+                <span className="text-gray-500 dark:text-gray-400">Package</span>
                 <span className="font-medium text-gray-800 dark:text-white text-right max-w-48 truncate">{booking.package?.title}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Status</span>
+                <span className="text-gray-500 dark:text-gray-400">Status</span>
                 <span className="badge-success capitalize">{booking.status}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Total Paid</span>
+                <span className="text-gray-500 dark:text-gray-400 ">Total Paid</span>
                 <span className="font-bold text-gray-900 dark:text-white">₹{booking.pricing?.totalAmount?.toLocaleString('en-IN')}</span>
               </div>
               {booking.travelDates?.departureDate && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Departure</span>
+                  <span className="text-gray-500 dark:text-gray-400">Departure</span>
                   <span className="font-medium text-gray-800 dark:text-white">{new Date(booking.travelDates.departureDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                 </div>
               )}

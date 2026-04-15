@@ -75,7 +75,7 @@ export default function DestinationDetail() {
                   {dest.climate.bestMonths?.map(m => <span key={m} className="badge-primary capitalize">{m}</span>)}
                 </div>
                 {dest.climate.temperature && (
-                  <p className="text-sm text-gray-500 mt-2">Temperature: {dest.climate.temperature.min}°–{dest.climate.temperature.max}°C</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">Temperature: {dest.climate.temperature.min}°–{dest.climate.temperature.max}°C</p>
                 )}
               </div>
             )}
@@ -83,10 +83,10 @@ export default function DestinationDetail() {
               <div className="card p-5">
                 <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Visa Information</h4>
                 <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-gray-500">Required</span><span className={dest.visaInfo.required ? 'text-red-500' : 'text-accent'}>{dest.visaInfo.required ? 'Yes' : 'No'}</span></div>
-                  {dest.visaInfo.onArrival && <div className="flex justify-between"><span className="text-gray-500">On Arrival</span><span className="text-accent">Available</span></div>}
-                  {dest.visaInfo.eVisa && <div className="flex justify-between"><span className="text-gray-500">e-Visa</span><span className="text-accent">Available</span></div>}
-                  {dest.visaInfo.fee && <div className="flex justify-between"><span className="text-gray-500">Fee</span><span className="text-gray-800 dark:text-white">${dest.visaInfo.fee}</span></div>}
+                  <div className="flex justify-between"><span className="text-gray-500 dark:text-gray-400">Required</span><span className={dest.visaInfo.required ? 'text-red-500' : 'text-accent'}>{dest.visaInfo.required ? 'Yes' : 'No'}</span></div>
+                  {dest.visaInfo.onArrival && <div className="flex justify-between"><span className="text-gray-500 dark:text-gray-400">On Arrival</span><span className="text-accent">Available</span></div>}
+                  {dest.visaInfo.eVisa && <div className="flex justify-between"><span className="text-gray-500 dark:text-gray-400">e-Visa</span><span className="text-accent">Available</span></div>}
+                  {dest.visaInfo.fee && <div className="flex justify-between"><span className="text-gray-500 dark:text-gray-400">Fee</span><span className="text-gray-800 dark:text-white">${dest.visaInfo.fee}</span></div>}
                 </div>
               </div>
             )}

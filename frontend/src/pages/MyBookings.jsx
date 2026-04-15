@@ -10,9 +10,9 @@ const STATUS_STYLES = {
   pending: 'badge-warning',
   confirmed: 'badge-success',
   processing: 'badge-primary',
-  completed: 'bg-gray-100 text-gray-600',
+  completed: 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300',
   cancelled: 'badge-error',
-  refunded: 'bg-purple-100 text-purple-600'
+  refunded: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400'
 }
 
 const PLACEHOLDER = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&q=80'
@@ -43,7 +43,7 @@ export default function MyBookings() {
         <div className="page-container py-8">
           <div className="mb-6">
             <h1 className="font-heading text-3xl font-bold text-gray-900 dark:text-white">My Bookings</h1>
-            <p className="text-gray-500 mt-1">Track and manage all your travel bookings</p>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">Track and manage all your travel bookings</p>
           </div>
 
           {/* Status filter tabs */}
@@ -61,7 +61,7 @@ export default function MyBookings() {
 
           {loading ? (
             <div className="space-y-4">
-              {[1,2,3].map(i => <div key={i} className="h-36 bg-gray-200 dark:bg-gray-800 rounded-2xl animate-pulse" />)}
+              {[1, 2, 3].map(i => <div key={i} className="h-36 bg-gray-200 dark:bg-gray-800 rounded-2xl animate-pulse" />)}
             </div>
           ) : bookings.length > 0 ? (
             <div className="space-y-4">
@@ -95,7 +95,7 @@ export default function MyBookings() {
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap gap-3 text-xs text-gray-500 mb-3">
+                    <div className="flex flex-wrap gap-3 text-xs text-gray-500 dark:text-gray-400 mb-3">
                       {booking.travelDates?.departureDate && (
                         <span className="flex items-center gap-1">
                           <FiCalendar className="text-primary" />
@@ -117,13 +117,13 @@ export default function MyBookings() {
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-primary">₹{booking.pricing?.totalAmount?.toLocaleString('en-IN')}</span>
                       <div className="flex gap-2">
-                        <Link to={`/booking/confirmation/${booking._id}`} className="btn-ghost text-xs px-3 py-1.5 border border-gray-200">
+                        <Link to={`/booking/confirmation/${booking._id}`} className="btn-ghost text-xs px-3 py-1.5 border border-gray-200 dark:border-gray-700">
                           <FiEye /> View
                         </Link>
                         {['pending', 'confirmed'].includes(booking.status) && (
                           <button
                             onClick={() => handleCancel(booking._id)}
-                            className="flex items-center gap-1 text-xs px-3 py-1.5 text-red-500 hover:bg-red-50 rounded-lg border border-red-200 transition-all"
+                            className="flex items-center gap-1 text-xs px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-900/50 transition-all"
                           >
                             <FiXCircle /> Cancel
                           </button>

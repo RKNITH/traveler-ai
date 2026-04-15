@@ -50,7 +50,7 @@ export default function Dashboard() {
             </div>
             <div className="text-center sm:text-left flex-1">
               <h1 className="font-heading text-2xl font-bold text-gray-900 dark:text-white">{user?.name}</h1>
-              <p className="text-gray-500">{user?.email}</p>
+              <p className="text-gray-500 dark:text-gray-400">{user?.email}</p>
               <div className="flex flex-wrap gap-2 mt-2 justify-center sm:justify-start">
                 <span className="badge-primary capitalize">{user?.role}</span>
                 <span className="badge bg-amber-100 text-amber-700">⭐ {user?.loyaltyPoints || 0} Points</span>

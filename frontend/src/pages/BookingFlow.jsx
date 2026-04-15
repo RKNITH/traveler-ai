@@ -113,12 +113,12 @@ export default function BookingFlow() {
             {STEPS.map((s, i) => (
               <div key={s} className="flex items-center">
                 <div className={`flex items-center gap-2 ${i <= step ? 'text-primary' : 'text-gray-400'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${i < step ? 'bg-primary text-white' : i === step ? 'bg-primary text-white' : 'bg-gray-200 text-gray-500'}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${i < step ? 'bg-primary text-white' : i === step ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400'}`}>
                     {i < step ? <FiCheck /> : i + 1}
                   </div>
                   <span className="text-sm font-medium hidden sm:block">{s}</span>
                 </div>
-                {i < STEPS.length - 1 && <div className={`w-16 sm:w-24 h-0.5 mx-2 transition-all ${i < step ? 'bg-primary' : 'bg-gray-200'}`} />}
+                {i < STEPS.length - 1 && <div className={`w-16 sm:w-24 h-0.5 mx-2 transition-all ${i < step ? 'bg-primary' : 'bg-gray-200 dark:bg-gray-700'}`} />}
               </div>
             ))}
           </div>
@@ -135,7 +135,7 @@ export default function BookingFlow() {
                     {/* Travelers count */}
                     <div className="space-y-4">
                       {[{ label: 'Adults', sublabel: '12+ years', value: adults, setter: setAdults, min: 1, max: 10 },
-                        { label: 'Children', sublabel: '2-11 years', value: children, setter: setChildren, min: 0, max: 8 }
+                      { label: 'Children', sublabel: '2-11 years', value: children, setter: setChildren, min: 0, max: 8 }
                       ].map(({ label, sublabel, value, setter, min, max }) => (
                         <div key={label} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-xl">
                           <div>
@@ -298,7 +298,7 @@ export default function BookingFlow() {
                           { value: 'bank_transfer', label: '🏦 Bank Transfer', sub: 'NEFT / RTGS / IMPS' },
                           { value: 'cash', label: '💵 Cash on Arrival', sub: 'Pay at our office' },
                         ].map(m => (
-                          <button key={m.value} onClick={() => setPaymentMethod(m.value)} className={`p-4 rounded-xl border text-left transition-all ${paymentMethod === m.value ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary'}`}>
+                          <button key={m.value} onClick={() => setPaymentMethod(m.value)} className={`p-4 rounded-xl border text-left transition-all ${paymentMethod === m.value ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'border-gray-200 dark:border-gray-700 hover:border-primary'}`}>
                             <p className="font-medium text-sm text-gray-800 dark:text-white">{m.label}</p>
                             <p className="text-xs text-gray-400 mt-0.5">{m.sub}</p>
                           </button>

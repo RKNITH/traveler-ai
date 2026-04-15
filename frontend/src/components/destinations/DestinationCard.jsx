@@ -74,7 +74,7 @@ export default function DestinationCard({ destination, delay = 0, variant = 'def
           <h3 className="font-heading font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
             {destination.name}
           </h3>
-          <div className="flex items-center gap-1 text-gray-500 text-sm mt-1">
+          <div className="flex items-center gap-1 text-gray-500 dark:text-gray-400 text-sm mt-1">
             <FiMapPin className="text-primary text-xs" />
             <span>{destination.country}</span>
             <span className="mx-1">·</span>

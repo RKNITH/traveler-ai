@@ -55,7 +55,7 @@ export default function Register() {
                 <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center">
                   <FiGlobe className="text-white" />
                 </div>
-                <span className="font-heading font-bold text-xl text-gray-900">Wander<span className="text-secondary">Lux</span></span>
+                <span className="font-heading font-bold text-xl text-gray-900 dark:text-white">Wander<span className="text-secondary">Lux</span></span>
               </Link>
             </div>
 

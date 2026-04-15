@@ -5,14 +5,14 @@ import { FiHeart, FiClock, FiUsers, FiMapPin, FiStar } from 'react-icons/fi'
 import { toggleWishlist } from '../../store/slices/authSlice'
 
 const categoryColors = {
-  adventure: 'bg-orange-100 text-orange-700',
-  honeymoon: 'bg-pink-100 text-pink-700',
-  family: 'bg-blue-100 text-blue-700',
-  solo: 'bg-purple-100 text-purple-700',
-  luxury: 'bg-amber-100 text-amber-700',
-  budget: 'bg-green-100 text-green-700',
-  beach: 'bg-cyan-100 text-cyan-700',
-  mountain: 'bg-gray-100 text-gray-700',
+  adventure: 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400',
+  honeymoon: 'bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400',
+  family: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
+  solo: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400',
+  luxury: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400',
+  budget: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
+  beach: 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400',
+  mountain: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300',
 }
 
 const PLACEHOLDER = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80'
@@ -97,7 +97,7 @@ export default function PackageCard({ pkg, delay = 0 }) {
             {pkg.title}
           </h3>
 
-          <div className="flex items-center gap-1 text-gray-500 text-sm mb-3">
+          <div className="flex items-center gap-1 text-gray-500 dark:text-gray-400 text-sm mb-3">
             <FiMapPin className="text-primary flex-shrink-0" />
             <span className="truncate">{pkg.destination?.name || 'Multiple Destinations'}</span>
           </div>
